@@ -7,25 +7,30 @@ function hashPW(pwd){
 }
 exports.signup = function(req, res){
   console.log("Begin exports.signup");
-  var user = new User({username:req.body.username});
-  console.log("after new user exports.signup");
-  user.set('hashed_password', hashPW(req.body.password));
-  console.log("after hashing user exports.signup");
-  user.set('email', req.body.email);
-  console.log("after email user exports.signup");
-  user.save(function(err) {
-    console.log("In exports.signup");
-    console.log(err);
-    if (err){
-      res.session.error = err;
-      res.redirect('/signup');
-    } else {
-      req.session.user = user.id;
-      req.session.username = user.username;
-      req.session.msg = 'Authenticated as ' + user.username;
-      res.redirect('/');
-    }
-  });
+  if(req.body.username && req.body.password && req.body.email && req.body.age) {
+    var user = new User({username:req.body.username});
+    console.log("after new user exports.signup");
+    user.set('hashed_password', hashPW(req.body.password));
+    console.log("after hashing user exports.signup");
+    user.set('email', req.body.email);
+    console.log("after email user exports.signup");
+    user.save(function(err) {
+      console.log("In exports.signup");
+      console.log(err);
+      if (err){
+        res.session.error = err;
+        res.redirect('/signup');
+      } else {
+        req.session.user = user.id;
+        req.session.username = user.username;
+        req.session.msg = 'Authenticated as ' + user.username;
+        res.redirect('/');
+      }
+    });
+  } else {
+    req.session.msg = 'Signup Failure! Please fill out all fields.';
+    res.redirect('/signup');
+  }
 };
 exports.login = function(req, res){
   User.findOne({ username: req.body.username })

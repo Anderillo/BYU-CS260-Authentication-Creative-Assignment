@@ -96,9 +96,14 @@ input::-webkit-input-placeholder {
 
 .login-register{
 	font-size: 11px;
-	text-align: center;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .input-group {
   max-width: 400px;
+}
+
+.close, .btn {
+  cursor: pointer;
 }

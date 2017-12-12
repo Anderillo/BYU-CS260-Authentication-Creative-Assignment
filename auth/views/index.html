@@ -1,86 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html ng-app="myApp">
-
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css"> -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        
-        <!-- Website CSS style -->
-        <!-- <link rel="stylesheet" type="text/css" href="assets/css/main.css"> -->
-        <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
-        <!-- Website Font style -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-        
-        <!-- Google Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-
-        <title>User Login and Sessions</title>
-    </head>
-
-    <body>
-        <div ng-controller="myController">
-            <div class="container">
-                <div class="row main">
-                    <div class="main-login main-center">
-                        <h2 id="welcomeText">Welcome. You are logged in as <%= username %>.</h2>
-                        <a id="logoutLink" href="/logout">Logout</a>
-                        <a id="editLink" href="/user">Edit User</a>
-                        <p>Place Your Code Here<p>
-                        <hr>
-                        <span id="indexMsg">
-                            <%= msg %>
-                        </span>
-                        <hr>
-                        <span id="colorText">
-                            Color
-                                <%= color %>
-                            </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
-        <script src="/static/js/my_app.js"></script>
-        
-
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    </body>
-</html>
-
-<!-- <!doctype html>
-<html ng-app="myApp">
-
-<head>
-    <title>User Login and Sessions</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
-</head>
-
-<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>        
+    <title>Home</title>
+  </head>
+  <body>
     <div ng-controller="myController">
-        <h2 id="welcomeText">Welcome. You are Logged In as
-            <%= username %>
-        </h2>
-        <a id="logoutLink" href="/logout">logout</a>
-        <a id="editLink" href="/user">Edit User</a>
-        <p>Place Your Code Here
-            <p>
+      <div class="container">
+        <div class="row main">
+          <div class="main-login main-center">
+            <h2 id="welcomeText">Welcome. You are logged in as <%= username %>.</h2>
+            <a id="logoutLink" href="/logout">Logout</a>
+            <a id="editLink" href="/user">Edit User</a>
+            <p>Place Your Code Here<p>
+            <hr>
+            <%if (msg) { %>
+              <div class="alert alert-secondary alert-dismissible fade show mx-2 mt-3" id="indexMsg">
+                <%= msg %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <% } %>
+            <hr>
+            <span id="colorText">
+              Color
+              <%= color %>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
-    <hr>
-    <span id="indexMsg">
-        <%= msg %>
-    </span>
-    <hr>
-    <span id="colorText">
-    Color
-        <%= color %>
-      </span>
     <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
     <script src="/static/js/my_app.js"></script>
-</body>
-
-</html> -->
+  </body>
+</html>

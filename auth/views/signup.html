@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css"> -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-    	<!-- Website CSS style -->
-    	<!-- <link rel="stylesheet" type="text/css" href="assets/css/main.css"> -->
-    	<link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
-    	<!-- Website Font style -->
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-		
-    	<!-- Google Fonts -->
-    	<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-    	<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-
-    	<title>User Login and Sessions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>  
+    <title>Sign Up</title>
 	</head>
 	<body>
-    	<div class="container">
-      		<div class="row main">
-      			<div class="main-login main-center">
-                    <div class="panel-heading">
-                            <div class="panel-title text-center">
-                            <h1 class="title">Sign Up</h1>
-                            <hr />
-                            </div>
-                    </div> 
-        			<form class="form-horizontal" method="POST" action="/signup">
+    <div class="container">
+      <div class="row main">
+        <div class="main-login main-center">
+          <div class="panel-heading">
+            <div class="panel-title text-center">
+              <h1 class="title">Sign Up</h1>
+              <hr />
+            </div>
+          </div> 
+          <form class="form-horizontal" method="POST" action="/signup">
 						<div class="form-group">
-                            <label for="username" class="cols-sm-2 control-label">Username</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username"/>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="password" class="cols-sm-2 control-label">Password</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password"/>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="form-group">
+              <label for="username" class="cols-sm-2 control-label">Username</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password" class="cols-sm-2 control-label">Password</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password"/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
 							<label for="email" class="cols-sm-2 control-label">Email</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
@@ -56,28 +49,33 @@
 									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
 								</div>
 							</div>
-						</div>
-                        
-                        <div class="form-group">
-                            <label for="age" class="cols-sm-2 control-label">Age</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="age" id="age" onblur="checkDate()" placeholder="Age"/>
-                                </div>
-                            </div>
-                        </div>
-
+						</div>     
+            <div class="form-group">
+              <label for="age" class="cols-sm-2 control-label">Age</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="age" id="age" onblur="checkDate()" placeholder="Age"/>
+                </div>
+              </div>
+            </div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
-                    </form>
+          </form>
+          <div class="login-register">
+						<a class="btn btn-primary btn-lg btn-block login-button" id="signUpLink" href="/login">Return to Login</a>
+          </div>
+          <%if (msg) { %>
+            <div class="alert alert-secondary alert-dismissible fade show mx-2 mt-3" id="signupMsg">
+              <%= msg %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% } %>
 				</div>
 			</div>
 		</div>
-
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	</body>
 </html>

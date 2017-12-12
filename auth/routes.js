@@ -27,6 +27,9 @@ module.exports = function(app) {
     if(req.session.user){
       res.redirect('/');
     }
+    if(req.session.msg == 'User Not Found.') {
+      req.session.msg = '';
+    }
     res.render('signup', {msg:req.session.msg});
   });
   app.get('/login',  function(req, res){
