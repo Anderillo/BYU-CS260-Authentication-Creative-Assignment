@@ -1,4 +1,5 @@
 var crypto = require('crypto');
+var multer = require('multer');
 var mongoose = require('mongoose'),
     User = mongoose.model('User');
 function hashPW(pwd){
@@ -23,6 +24,7 @@ exports.signup = function(req, res){
       } else {
         req.session.user = user.id;
         req.session.username = user.username;
+        req.session.profile_picture = user.profile_picture;
         req.session.msg = 'Authenticated as ' + user.username;
         res.redirect('/');
       }
@@ -44,8 +46,8 @@ exports.login = function(req, res){
         console.log(user);
         req.session.user = user.id;
         req.session.username = user.username;
+        req.session.profile_picture = user.profile_picture;
         req.session.msg = 'Authenticated as ' + user.username;
-        req.session.color = user.color;
         res.redirect('/');
       });
     }else{
@@ -72,14 +74,13 @@ exports.getUserProfile = function(req, res) {
 exports.updateUser = function(req, res){
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
+    console.log(req.file_upload);
     user.set('email', req.body.email);
-    user.set('color', req.body.color);
     user.save(function(err) {
       if (err){
         res.sessor.error = err;
       } else {
         req.session.msg = 'User Updated.';
-        req.session.color = req.body.color;
       }
       res.redirect('/user');
     });

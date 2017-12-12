@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 var UserSchema = new Schema({
     username: { type: String, unique: true },
     email: String,
-    color: String,
-    hashed_password: String
+    hashed_password: String,
+    profile_picture: String
 });
 mongoose.model('User', UserSchema);

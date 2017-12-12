@@ -14,7 +14,7 @@ p.form-header{
 form{
   margin:10px;
 }
-label{ width:80px; display: inline-block;}
+label{ display: inline-block;}
 input{
   border: 3px ridge blue;
   border-radius:5px;
@@ -106,4 +106,42 @@ input::-webkit-input-placeholder {
 
 .close, .btn {
   cursor: pointer;
+}
+
+.image-upload > input
+{
+    display: none;
+}
+
+input[type=file]
+{
+  filter: alpha(opacity=0);
+}
+
+#upload-body
+{
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#upload-header
+{
+  border: 0px;
+}
+
+.upload-table
+{
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-collapse: separate;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.m-10
+{
+  margin: 10px !important;
 }

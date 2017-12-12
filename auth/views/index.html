@@ -17,24 +17,24 @@
       <div class="container">
         <div class="row main">
           <div class="main-login main-center">
-            <h2 id="welcomeText">Welcome. You are logged in as <%= username %>.</h2>
-            <a id="logoutLink" href="/logout">Logout</a>
-            <a id="editLink" href="/user">Edit User</a>
-            <p>Place Your Code Here<p>
-            <hr>
-            <%if (msg) { %>
-              <div class="alert alert-secondary alert-dismissible fade show mx-2 mt-3" id="indexMsg">
-                <%= msg %>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <% } %>
-            <hr>
-            <span id="colorText">
-              Color
-              <%= color %>
-            </span>
+            <div class="text-center">
+              <h2 id="welcomeText">Welcome <%= username %>!</h2>
+              <%if (profile_picture) { %>
+                <img class="my-2 img-fb" src="/static/uploads/<%= profile_picture %>" height="170px" width="170px"/><br>
+              <% } else{ %>  
+                <img class="my-2 img-fb" src="http://www.baldwincity.org/cms/images/placeholder-headshot-350.png" height="170px" width="170px"/><br>
+              <% } %>
+              <a id="logoutLink" href="/logout">Logout</a> | 
+              <a id="editLink" href="/user">Edit User</a>
+              <%if (msg) { %>
+                <div class="alert alert-secondary alert-dismissible fade show mx-2 mt-3" id="indexMsg">
+                  <%= msg %>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              <% } %>
+            </div>
           </div>
         </div>
       </div>
