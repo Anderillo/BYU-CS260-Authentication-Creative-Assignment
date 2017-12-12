@@ -64,8 +64,6 @@ module.exports = function(app) {
   app.post('/user/update', upload.single('file_upload'), function(req, res){
     User.findOne({ _id: req.session.user })
     .exec(function(err, user) {
-      console.log(req.body);
-      console.log(req.file);
       if (typeof req.file != 'undefined')
       {
         user.set('profile_picture', req.file.filename);

@@ -15,6 +15,7 @@ exports.signup = function(req, res){
     console.log("after hashing user exports.signup");
     user.set('email', req.body.email);
     console.log("after email user exports.signup");
+    user.set('age', req.body.age);
     user.save(function(err) {
       console.log("In exports.signup");
       console.log(err);
@@ -25,6 +26,7 @@ exports.signup = function(req, res){
         req.session.user = user.id;
         req.session.username = user.username;
         req.session.profile_picture = user.profile_picture;
+        req.session.age = user.age;
         req.session.msg = 'Authenticated as ' + user.username;
         res.redirect('/');
       }
@@ -47,6 +49,7 @@ exports.login = function(req, res){
         req.session.user = user.id;
         req.session.username = user.username;
         req.session.profile_picture = user.profile_picture;
+        req.session.age = user.age;
         req.session.msg = 'Authenticated as ' + user.username;
         res.redirect('/');
       });
