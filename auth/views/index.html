@@ -28,8 +28,8 @@
               <% } %>
               <a id="logoutLink" href="/logout">Logout</a> | 
               <a id="editLink" href="/user">Edit User</a>
-              <button id="ageButton" class="btn btn-primary btn-lg btn-block login-button" onclick="getAgeFact(<%= age %>)">Get new fact!</button>
-              <div class="alert alert-secondary fade show mx-2 mt-3" id="numberMsg">
+              <button id="ageButton" class="btn btn-primary btn-lg btn-block login-button" onclick="getAgeFact(<%= age %>)">Get New Age Fact!</button>
+              <div class="alert alert-secondary fade show mx-2 mt-3 hide" id="numberMsg">
                 <div id="number"></div>
               </div>
               <%if (msg) { %>

@@ -4,5 +4,8 @@ function getAgeFact(age) {
                   console.log(age);
                   $.get('http://numbersapi.com/' + age, function(data) {
                     $('#number').text(data);
+                    if ($('#numberMsg').hasClass('hide')) {
+                      $('#numberMsg').removeClass('hide');
+                    }
                   });
                 };
