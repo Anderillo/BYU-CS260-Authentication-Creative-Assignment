@@ -9,7 +9,8 @@ module.exports = function(app) {
     if (req.session.user) {
       res.render('index', {username: req.session.username,
                            msg:req.session.msg,
-                           color:req.session.color});
+                           color:req.session.color,
+                           age:req.session.age});
     } else {
       req.session.msg = 'Access denied!';
       res.redirect('/login');

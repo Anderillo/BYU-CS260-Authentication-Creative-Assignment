@@ -10,6 +10,7 @@ var Lab6 = function() {
     self.passwordInput = $("#password");
     self.emailInput = $("#email");
     self.colorInput = $("#color");
+    self.ageInput = $("#age");
 
     //These should all be buttons... either input type=submit or buttons...
     self.registerButton = $("#register");
