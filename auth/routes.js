@@ -68,16 +68,20 @@ module.exports = function(app) {
       if (typeof req.file != 'undefined')
       {
         user.set('profile_picture', req.file.filename);
+        req.session.profile_picture = req.file.filename
+      }
+      if (req.body.age != '') {
+        user.set('age', req.body.age);
+        req.session.age = req.body.age;
       }
       user.set('email', req.body.email);
       user.save(function(err) {
         if (err){
           res.sessor.error = err;
         } else {
-          req.session.profile_picture = req.file.filename
           req.session.msg = 'User Updated.';
         }
-        res.redirect('/user');
+        res.redirect('/');
       });
     });
   });
